@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Bán xe máy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script>
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("content").innerHTML = data;
+                })
+                .catch(error => console.error("Lỗi tải trang:", error));
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadContent("page/home.php"); // Tải trang chủ mặc định
+        });
+    </script>
+</head>
+
+<body>
+    <div class="hero_area">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="loadContent('page/home.php')">Trang chủ</a></li>
+                <li><a href="#" onclick="loadContent('page/shop.php')">Cửa hàng</a></li>
+                <li><a href="#" onclick="loadContent('page/contact.php')">Liên hệ</a></li>
+                <li><a href="#" onclick="loadContent('page/about.php')">Giới thiệu</a></li>
+                <li><a href="#" onclick="loadContent('page/cart.php')">Giỏ hàng</a></li>
+            </ul>
+        </nav>
+
+        <div id="content"></div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
